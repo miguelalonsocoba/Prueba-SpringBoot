@@ -46,7 +46,7 @@ public class EmployeeController {
      */
     @GetMapping
     public ResponseEntity<List<Employee>> findAll() {
-        LOGGER.debug("Executing method findAll()");
+        LOGGER.info("Executing method findAll()");
         return new ResponseEntity<>(employeeService.findAll(), HttpStatus.OK);
     }
 
@@ -58,7 +58,7 @@ public class EmployeeController {
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteById(@PathVariable(value = "id") Integer id) {
-        LOGGER.debug("Executing method deleteById()");
+        LOGGER.info("Executing method deleteById()");
         employeeService.deleteById(id);
     }
 
@@ -71,7 +71,7 @@ public class EmployeeController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void save(@RequestBody Employee employee) {
-        LOGGER.debug("Executing method save()");
+        LOGGER.info("Executing method save()");
         employeeService.save(employee);
     }
 
@@ -84,7 +84,7 @@ public class EmployeeController {
     @PostMapping(value = "/batch")
     @ResponseStatus(HttpStatus.CREATED)
     public void saveAll(@RequestBody List<Employee> employees) {
-        LOGGER.debug("Executing method saveAll()");
+        LOGGER.info("Executing method saveAll()");
         employeeService.saveAll(employees);
     }
 

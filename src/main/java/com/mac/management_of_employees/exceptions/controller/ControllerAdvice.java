@@ -110,6 +110,7 @@ public class ControllerAdvice {
     @ExceptionHandler(EmptyResultDataAccessException.class)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<ErrorDTO> emptyResultDataAccessExceptionHandler(EmptyResultDataAccessException e) {
+        LOGGER.warn("Empty result: {}", e.getMessage());
         ErrorDTO error = new ErrorDTO();
         error.setTimestamp(new Date());
         error.setStatus(HttpStatus.NO_CONTENT.value());
@@ -131,6 +132,7 @@ public class ControllerAdvice {
      */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorDTO> exceptionHandler(Exception e) {
+        LOGGER.warn("Internal server error: {}", e.getMessage());
         ErrorDTO error = new ErrorDTO();
         error.setTimestamp(new Date());
         error.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());

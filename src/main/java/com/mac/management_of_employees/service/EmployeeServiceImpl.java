@@ -51,13 +51,13 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     @Transactional(readOnly = true)
     public List<Employee> findAll() {
-        LOGGER.debug("Executing method findAll()");
+        LOGGER.info("Executing method findAll()");
         List<Employee> employees = employeeDao.findAll();
         if (employees.isEmpty()) {
             LOGGER.warn("No records found in the database");
             throw new EmptyResultDataAccessException("No records found in the database", 0);
         }
-        LOGGER.debug("Employees found: {}", employees);
+        LOGGER.info("Employees found: {}", employees);
         return employees;
     }
 
@@ -70,9 +70,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     @Transactional
     public void deleteById(Integer id) {
-        LOGGER.debug("Executing method deleteById()");
+        LOGGER.info("Executing method deleteById()");
         employeeDao.deleteById(id);
-        LOGGER.debug("Employee {} deleted", id);
+        LOGGER.info("Employee {} deleted", id);
     }
 
     /**
@@ -83,9 +83,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     @Transactional
     public void save(Employee employee) {
-        LOGGER.debug("Executing method save()");
+        LOGGER.info("Executing method save()");
         employeeDao.save(employee);
-        LOGGER.debug("Employee saved {}", employee);
+        LOGGER.info("Employee saved {}", employee);
     }
 
     /**
@@ -95,8 +95,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
      */
     @Override
     public void saveAll(List<Employee> employees) {
-        LOGGER.debug("Executing method saveAll()");
+        LOGGER.info("Executing method saveAll()");
         employeeDao.saveAll(employees);
-        LOGGER.debug("Employees saved {}", employees);
+        LOGGER.info("Employees saved {}", employees);
     }
 }
