@@ -4,7 +4,6 @@ import com.mac.management_of_employees.domain.entity.Employee;
 import com.mac.management_of_employees.domain.persistence.EmployeeDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

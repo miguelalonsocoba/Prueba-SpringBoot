@@ -1,7 +1,6 @@
 package com.mac.management_of_employees.exceptions.controller;
 
 import com.mac.management_of_employees.exceptions.dto.ErrorDTO;
-import jakarta.persistence.EntityNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
