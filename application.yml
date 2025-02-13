@@ -1,0 +1,4 @@
+#DB_URL: jdbc:postgresql://127.0.0.1:5432/management-of-employees
+DB_URL: jdbc:postgresql://localhost:5432/management-of-employees
+DB_USER: postgres
+DB_PASSWORD: admin
