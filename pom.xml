@@ -83,6 +83,7 @@
 						<exclude>**/ManagementOfEmployeesApplication.class</exclude>
 						<exclude>**/entity/*.class</exclude>
 						<exclude>**/dto/*.class</exclude>
+						<exclude>**/config/*.class</exclude>
 					</excludes>
 				</configuration>
 				<executions>

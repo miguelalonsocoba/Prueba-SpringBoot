@@ -56,4 +56,11 @@ class EmployeeControllerTest {
         Mockito.verify(employeeServiceMock, Mockito.times(LoadPreconfiguration.NUMBER_OF_INVOCATIONS)).saveAll(Mockito.anyList());
     }
 
+    @Test
+    void updateSuccessfulTest() {
+        Mockito.doNothing().when(employeeServiceMock).save(Mockito.any(Employee.class));
+        employeeController.update(LoadPreconfiguration.getEmployees().get(LoadPreconfiguration.ID));
+        Mockito.verify(employeeServiceMock, Mockito.times(LoadPreconfiguration.NUMBER_OF_INVOCATIONS)).save(Mockito.any(Employee.class));
+    }
+
 }

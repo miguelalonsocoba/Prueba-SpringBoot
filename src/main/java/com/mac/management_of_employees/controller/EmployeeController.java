@@ -88,4 +88,17 @@ public class EmployeeController {
         employeeService.saveAll(employees);
     }
 
+    /**
+     * Updates an existing employee record in the data store.
+     * The request body must contain the updated employee details.
+     *
+     * @param employee the employee object containing the updated details to be persisted
+     */
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    public void update(@RequestBody Employee employee) {
+        LOGGER.info("Executing method update(): {}", employee);
+        employeeService.save(employee);
+    }
+
 }
