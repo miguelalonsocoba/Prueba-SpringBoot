@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "42e73dd5-aa23-4f1d-b175-8eda20add87e",
+		"name": "Employees",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9102612"
+	},
+	"item": [
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API_VERSION",
+						"value": "1.0.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteById",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-API_VERSION",
+						"value": "1.0.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/employees/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-API_VERSION",
+						"value": "1.0.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Jaime\",\r\n    \"secondName\": \"Camil\",\r\n    \"firstSurname\": \"Fuentes\",\r\n    \"secondSurname\": \"Cruz\",\r\n    \"age\": 36,\r\n    \"gender\": \"M\",\r\n    \"dateOfBirth\": \"14-03-1988\",\r\n    \"position\": \"Desarrollador\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "batch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-API_VERSION",
+						"value": "1.0.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"firstName\": \"Jaime\",\r\n    \"secondName\": \"Camil\",\r\n    \"firstSurname\": \"Fuentes\",\r\n    \"secondSurname\": \"Cruz\",\r\n    \"age\": 36,\r\n    \"gender\": \"M\",\r\n    \"dateOfBirth\": \"1988-03-14\",\r\n    \"position\": \"Desarrollador\"\r\n\r\n},\r\n{\r\n    \"firstName\": \"Jaime\",\r\n    \"secondName\": \"Camil\",\r\n    \"firstSurname\": \"Fuentes\",\r\n    \"secondSurname\": \"Cruz\",\r\n    \"age\": 36,\r\n    \"gender\": \"M\",\r\n    \"dateOfBirth\": \"1988-03-14\",\r\n    \"position\": \"Desarrollador\"\r\n\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/batch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-API_VERSION",
+						"value": "1.0.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"firstName\": \"Jaime\",\r\n    \"secondName\": \"Camil\",\r\n    \"firstSurname\": \"Fuentes\",\r\n    \"secondSurname\": \"Cruz\",\r\n    \"age\": 56,\r\n    \"gender\": \"M\",\r\n    \"dateOfBirth\": \"14-03-1988\",\r\n    \"position\": \"Desarrollador\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
