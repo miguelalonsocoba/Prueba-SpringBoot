@@ -2,6 +2,8 @@ package com.mac.management_of_employees.domain.entity;
 
 import jakarta.persistence.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -56,6 +58,7 @@ public class Employee {
      */
     @Column(name = "gender", length = 1, nullable = false)
     private String gender;
+
 
     /**
      * Represents the date of birth of the Employee.
@@ -231,17 +234,28 @@ public class Employee {
      *
      * @return the date of birth of the employee as a Date object.
      */
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public String getDateOfBirth() {
+        if (this.dateOfBirth == null) {
+            return null;
+        }
+        SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy");
+        return outputFormat.format(this.dateOfBirth);
     }
 
     /**
-     * Sets the date of birth for the employee.
+     * Sets the date of birth for the employee based on the given input string.
+     * The input string must be in the format "dd-MM-yyyy".
      *
-     * @param dateOfBirth The date of birth to assign to the employee, represented as a Date object.
+     * @param inputDate The date of birth as a string in the format "dd-MM-yyyy".
+     * @throws IllegalArgumentException If the given date format is invalid or parsing fails.
      */
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDateOfBirth(String inputDate) {
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("dd-MM-yyyy");
+            this.dateOfBirth = inputFormat.parse(inputDate);
+        } catch (ParseException e) {
+            throw new IllegalArgumentException("Invalid date format. Expected format: dd-MM-yyyy", e);
+        }
     }
 
     /**

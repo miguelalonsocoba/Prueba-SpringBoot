@@ -37,7 +37,7 @@ public class HeaderLoggingInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        LOGGER.info("Ditails of the request headers:");
+        LOGGER.info("Details of the request headers:");
         Enumeration<String> headerNames = request.getHeaderNames();
         if (headerNames != null) {
             while (headerNames.hasMoreElements()) {
